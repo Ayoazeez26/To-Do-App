@@ -1,0 +1,47 @@
+#container {
+    width: 100%;
+    height: auto;
+}
+
+.header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#row {
+    display: flex;
+}
+
+#col {
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+}
+
+form button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #1E1E1E;
+    color: #FFF;
+    border: none;
+}
+
+form button:hover {
+    background-color: #2F2F2F;
+}
+
+#added-tasks ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#added-tasks li {
+    margin: 15px 0;
+    position: relative;
+}
+
+.cancel-task {
+    position: absolute;
+    right: 0;
+}
