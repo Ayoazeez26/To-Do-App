@@ -26,4 +26,18 @@ function addTaskToList(e) {
     li.appendChild(link);
 
     addTask.appendChild(li);
+
+    addToLocalStorage(task);
+
+    this.reset();
+}
+
+function addToLocalStorage(task) {
+    let storedTask = localStorage.getItem('taskToDo');
+
+    storedTask = storedTask ? storedTask.split(',') : [];
+
+    storedTask.push(task);
+
+    localStorage.setItem('taskToDo', storedTask.toString());
 }
