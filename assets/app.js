@@ -1,5 +1,3 @@
-const task = document.getElementById('textarea').value;
-
 const addTaskBtn = document.querySelector('#submit-task');
 
 addTaskBtn.addEventListener('click', addTaskToList);
@@ -7,8 +5,9 @@ addTaskBtn.addEventListener('click', addTaskToList);
 function addTaskToList(e) {
     e.preventDefault();
 
-    const addTask = document.querySelector('#add-task');
+    const task = document.getElementById('textarea').value;
 
+    const addTask = document.querySelector('#add-task');
 
     const li = document.createElement('li');
 
