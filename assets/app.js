@@ -1,36 +1,40 @@
-const addTaskBtn = document.querySelector('#submit-task');
+const taskList = document.querySelector('#added-tasks');
+const ul = document.querySelector('#add-task');
+const textArea = document.getElementsByTagName('textarea');
 
-addTaskBtn.addEventListener('click', addTaskToList);
+document.querySelector('#submit-task').addEventListener('click', addTaskToList);
+
+taskList.addEventListener('click', removeTaskFromList);
+
+document.addEventListener('DOMContentLoaded', loadTasks);
+
+// Create li
+
+const taskLi = action => {
+    const li = document.createElement('li');
+    const link = document.createElement('a');
+    link.textContent = 'X';
+    var a = document.createAttribute("class");
+    a.value = "cancel-task";
+    link.setAttributeNode(a);
+    li.textContent = action;
+    li.appendChild(link);
+    ul.appendChild(li);
+}
+
+// Add Task
 
 function addTaskToList(e) {
     e.preventDefault();
 
-    const task = document.getElementById('textarea').value;
+    taskLi(textarea.value);
 
-    const addTask = document.querySelector('#add-task');
-
-    const li = document.createElement('li');
-
-    const link = document.createElement('a');
-
-    link.textContent = 'X';
-
-    var a = document.createAttribute("class");
+    addToLocalStorage(textarea.value);
     
-    a.value = "cancel-task";
-
-    link.setAttributeNode(a);
-    
-    li.textContent = task;
-
-    li.appendChild(link);
-
-    addTask.appendChild(li);
-
-    addToLocalStorage(task);
-
-    this.reset();
+    textarea.value = '';
 }
+
+// Add task to locale storage
 
 function addToLocalStorage(task) {
     let storedTask = localStorage.getItem('taskToDo');
@@ -39,5 +43,22 @@ function addToLocalStorage(task) {
 
     storedTask.push(task);
 
-    localStorage.setItem('taskToDo', storedTask.toString());
+    localStorage.setItem('taskToDo', JSON.stringify(storedTask));
+}
+
+// Remove task
+
+function removeTaskFromList(e) {
+    if(e.target.classList.contains('cancel-task')) {
+        e.target.parentElement.remove();
+    }
+}
+
+// Load from local storage 
+
+function loadTasks() {
+    const data = JSON.parse(localStorage.getItem('taskToDo'));
+    data.forEach(item => {
+        taskLi(item);
+    })
 }
