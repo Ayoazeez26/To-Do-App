@@ -1,15 +1,15 @@
 <template>
-  <div class="header">
-    <div class="navbar bg-white flex h-8 justify-between items-center w-full">
+  <div class="header bg-white fixed w-full z-20">
+    <div class="navbar flex h-16 justify-between items-center">
       <img src="../assets/images/logo.svg" alt="logo">
       <ul class="nav-el flex">
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Blog</li>
+        <li class="mr-3">Home</li>
+        <li class="mr-3">About</li>
+        <li class="mr-3">Contact</li>
+        <li class="mr-3">Blog</li>
         <li>Careers</li>
       </ul>
-      <a class="login" href="#">Request Invite</a>
+      <a class="invite px-8 py-3 text-white" href="#">Request Invite</a>
       <div
         class="hamburger hidden"
         @click="toggleNav"
@@ -42,5 +42,17 @@ export default {
 </script>
 
 <style scoped>
-
+.navbar {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.nav-el li {
+  color: #9698A6;
+}
+.invite {
+  background: rgb(49,211,92);
+  background: linear-gradient(90deg, rgba(49,211,92,1) 0%, rgba(43,183,218,1) 100%);
+  border-radius: 30px;
+}
 </style>
