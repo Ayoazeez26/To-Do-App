@@ -2,12 +2,12 @@
   <div class="header bg-white fixed w-full z-20">
     <div class="navbar flex h-16 justify-between items-center">
       <img src="../assets/images/logo.svg" alt="logo">
-      <ul class="nav-el flex">
-        <li class="mr-3">Home</li>
-        <li class="mr-3">About</li>
-        <li class="mr-3">Contact</li>
-        <li class="mr-3">Blog</li>
-        <li>Careers</li>
+      <ul class="nav-el flex h-full">
+        <li class="mr-3 h-full flex items-center">Home</li>
+        <li class="mr-3 h-full flex items-center">About</li>
+        <li class="mr-3 h-full flex items-center">Contact</li>
+        <li class="mr-3 h-full flex items-center">Blog</li>
+        <li class="h-full flex items-center">Careers</li>
       </ul>
       <a class="invite px-8 py-3 text-white" href="#">Request Invite</a>
       <div
@@ -49,6 +49,12 @@ export default {
 }
 .nav-el li {
   color: #9698A6;
+}
+.nav-el li:hover {
+  color: #2D314D;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(49,211,92);
 }
 .invite {
   background: rgb(49,211,92);
