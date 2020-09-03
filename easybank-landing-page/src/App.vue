@@ -22,5 +22,6 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap');
 #app {
   font-family: 'Public Sans', Helvetica, Arial, sans-serif;
+  box-sizing: content-box;
 }
 </style>
